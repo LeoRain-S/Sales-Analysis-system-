@@ -89,7 +89,9 @@ public class App extends Application {
    }
    // Main
    public static void main(String args[]) throws IOException {
+      // The results.csv 
       readFileAndExportResult();
+      // The bar chart
       launch(args);
    }
    
