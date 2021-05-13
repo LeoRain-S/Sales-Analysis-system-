@@ -94,7 +94,7 @@ public class App extends Application {
       // The bar chart
       launch(args);
    }
-   
+   // Author - Eric Chen
    public static void readFileAndExportResult(){
       int[] arr = new int[10];
       int total = 0;
