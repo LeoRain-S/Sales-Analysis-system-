@@ -105,37 +105,37 @@ public class App extends Application {
             BufferedReader reader = new BufferedReader(new FileReader(new File("sales.csv")));
             reader.readLine();
             while ((line = reader.readLine()) != null) {
-              // System.out.println(line);
-              String num = line.split(",")[1];
-              int digit = num.charAt(0) - '0';
-              arr[digit]++;
-              total++;
-          }
+                // System.out.println(line);
+                String num = line.split(",")[1];
+                int digit = num.charAt(0) - '0';
+                arr[digit]++;
+                total++;
+            }
 
-          for (int i = 1; i < 10; i++) {
-              freq[i] = 100.0 * arr[i] / total;
-              // System.out.println(i + ": " + freq[i]);
-          }
+            for (int i = 1; i < 10; i++) {
+                freq[i] = 100.0 * arr[i] / total;
+                // System.out.println(i + ": " + freq[i]);
+            }
 
-          if (freq[1] >= 29 && freq[1] <= 32) {
-              System.out.println("The data indicates that fraud likely did not occur.");
-          }
+            if (freq[1] >= 29 && freq[1] <= 32) {
+                System.out.println("The data indicates that fraud likely did not occur.");
+            }
 
-          BufferedWriter writer = new BufferedWriter(new FileWriter(new File("results.csv")));
-          writer.write("digit,frequency");
-          writer.newLine();
-          for (int i = 1; i < 10; i++) {
-              line = i + "," + freq[i];
-              writer.write(line);
-              writer.newLine();
-          }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("results.csv")));
+            writer.write("digit,frequency");
+            writer.newLine();
+            for (int i = 1; i < 10; i++) {
+                line = i + "," + freq[i];
+                writer.write(line);
+                writer.newLine();
+            }
 
-          reader.close();
-          writer.close();
-      } catch (FileNotFoundException e) {
+            reader.close();
+            writer.close();
+        } catch (FileNotFoundException e) {
           e.printStackTrace();
-      } catch (IOException e) {
+        } catch (IOException e) {
           e.printStackTrace();
-      }     
-  } 
+        }     
+    } 
 }
