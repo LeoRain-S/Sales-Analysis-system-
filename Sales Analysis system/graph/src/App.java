@@ -138,24 +138,4 @@ public class App extends Application {
           e.printStackTrace();
       }     
   } 
-    public static void readResult(){
-    int[] arr = new int[10];
-
-    try {
-        String line;
-        BufferedReader reader = new BufferedReader(new FileReader(new File("sales.csv")));
-        reader.readLine();
-        while ((line = reader.readLine()) != null) {
-            // System.out.println(line);
-            String num = line.split(",")[1];
-            int digit = num.charAt(0) - '0';
-            arr[digit]++;
-        }
-        reader.close();
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }     
-}
 }
